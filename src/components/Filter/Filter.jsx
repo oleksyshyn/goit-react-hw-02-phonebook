@@ -1,11 +1,11 @@
 import React from 'react';
-// import PropTypes from 'prop-types';
-// import css from './Filter.module.css';
+import PropTypes from 'prop-types';
+import css from './Filter.module.css';
 
 const Filter = ({ value, onChange }) => {
     return (
         <div>
-            <p>Find contacts by name</p>
+            <p className={css.filter_title} >Find contacts by name</p>
             <input
                 type="text"
                 value={value}
@@ -17,3 +17,8 @@ const Filter = ({ value, onChange }) => {
 }
 
 export default Filter;
+
+Filter.propTypes = {
+  value: PropTypes.string.isRequired,
+  onChange: PropTypes.func.isRequired,
+};
